@@ -23,3 +23,13 @@ TELEGRAM_SESSION_NAME = os.getenv("TELEGRAM_SESSION_NAME", "vacancies_parser")
 TELEGRAM_CHANNELS = [
     # "@example_channel",
 ]
+
+# --- hh.ru search settings ---
+HH_SEARCH_KEYWORDS = [
+    "Python developer",
+    "Data Analyst",
+    "Data Engineer",
+    "LLM AI Engineer",
+]
+HH_PER_PAGE = 50          # max 100 per hh.ru API
+HH_ONLY_REMOTE = True     # filter: schedule=remote
