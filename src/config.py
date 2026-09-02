@@ -15,13 +15,19 @@ DB_PATH = BASE_DIR / "data" / "vacancies.db"
 HH_API_BASE_URL = "https://api.hh.ru"
 
 # --- Telegram API ---
-TELEGRAM_API_ID = os.getenv("TELEGRAM_API_ID")
-TELEGRAM_API_HASH = os.getenv("TELEGRAM_API_HASH")
-TELEGRAM_SESSION_NAME = os.getenv("TELEGRAM_SESSION_NAME", "vacancies_parser")
+# TELEGRAM_API_ID = os.getenv("TELEGRAM_API_ID")
+# TELEGRAM_API_HASH = os.getenv("TELEGRAM_API_HASH")
+# TELEGRAM_SESSION_NAME = os.getenv("TELEGRAM_SESSION_NAME", "vacancies_parser")
 
-# List of channels for parsing
+# --- Telegram scraping settings (no auth needed) ---
+TELEGRAM_BASE_URL = "https://t.me/s"
 TELEGRAM_CHANNELS = [
-    # "@example_channel",
+    "zarubezhom_jobs",
+    "dev_connectablejobs",
+    "remotejun",
+    "Remoteit",
+    "evacuatejobs",
+    "young_june",
 ]
 
 # --- hh.ru search settings ---
