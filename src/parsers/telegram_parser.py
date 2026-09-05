@@ -23,12 +23,16 @@ class TelegramParser(BaseParser):
 
     source_name = "telegram"
 
+    def __init__(self, channels: Optional[List[str]] = None):
+        """Use provided channels list, or fall back to config default."""
+        self.channels = channels if channels is not None else TELEGRAM_CHANNELS
+
     async def parse(self) -> List[Vacancy]:
         """Fetch posts from all configured channels concurrently."""
         async with aiohttp.ClientSession() as session:
             tasks = [
                 self._fetch_channel(session, channel)
-                for channel in TELEGRAM_CHANNELS
+                for channel in self.channels
             ]
             results = await asyncio.gather(*tasks)
 
